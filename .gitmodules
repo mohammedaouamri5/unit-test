@@ -1,0 +1,3 @@
+[submodule "vendor/bin/premake5"]
+	path = vendor/bin/premake5
+	url = git@github.com:mohammedaouamri5/premake5.git

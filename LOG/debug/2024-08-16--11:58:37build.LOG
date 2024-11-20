@@ -1,0 +1,9 @@
+==== Building main (debug) ====
+Creating ../bin-int/Debug-linux-x86_64/main
+main.c
+src/main.c:4:9: fatal error: main.h: No such file or directory
+    4 | #include"main.h"
+      |         ^~~~~~~~
+compilation terminated.
+make[1]: *** [Makefile:142: ../bin-int/Debug-linux-x86_64/main/main.o] Error 1
+make: *** [Makefile:33: main] Error 2
