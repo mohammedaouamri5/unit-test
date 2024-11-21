@@ -1,0 +1,21 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-DSPDLOG_COMPILED_LIB",
+      "-DSPDLOG_ACTIVE_LEVEL",
+      "-IVendor",
+      "-IVendor/spdlog/include",
+      "-IVendor/nlohmann",
+      "-m64",
+      "-std=c++20",
+      "-c",
+      "-o",
+      "bin/obj/x86_64_Debug/main.o",
+      "Source/main.cpp"
+    ],
+    "directory": "/home/mohammedaouamri/DEV/unit-test",
+    "file": "/home/mohammedaouamri/DEV/unit-test/Source/main.cpp",
+    "output": "/home/mohammedaouamri/DEV/unit-test/bin/obj/x86_64_Debug/main.o"
+  }
+]

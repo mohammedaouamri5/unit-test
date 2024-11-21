@@ -13,5 +13,5 @@ mkdir -p LOG/${YMD}
 
 # Run the make command with the specified argument
 "bin/${build_type}/TP" 
-echo "\n----------------------------------(end)----------------------------------\nat"  LOG/"$YMD"/"$HMS"-run-"$build_type".LOG 
+echo "\n----------------------------------(end)----------------------------------\n --> \n at"  LOG/"$YMD"/"$HMS"-run-"$build_type".LOG 
 

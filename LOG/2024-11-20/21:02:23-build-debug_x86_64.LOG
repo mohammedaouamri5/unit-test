@@ -1,0 +1,10 @@
+==== Building spdlog (debug_x86_64) ====
+==== Building TP (debug_x86_64) ====
+EX1.cpp
+bubble.c
+Source/solutions/bubble.c:2:10: fatal error: sort.h: No such file or directory
+    2 | #include "sort.h"
+      |          ^~~~~~~~
+compilation terminated.
+make[1]: *** [TP.make:193: bin/obj/x86_64_Debug/bubble.o] Error 1
+make: *** [Makefile:50: TP] Error 2

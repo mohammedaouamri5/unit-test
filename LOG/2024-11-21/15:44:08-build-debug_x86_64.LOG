@@ -1,0 +1,9 @@
+==== Building spdlog (debug_x86_64) ====
+==== Building TP (debug_x86_64) ====
+loader.cpp
+Linking TP
+/usr/bin/ld: bin/obj/x86_64_Debug/EX1.o: in function `EX::ex(EX::__input_t*, EX::__output_t*, char const*)':
+EX1.cpp:(.text+0x39): undefined reference to `get_function(char const*, char const*, void**)'
+collect2: error: ld returned 1 exit status
+make[1]: *** [TP.make:123: bin/x86_64_Debug/TP] Error 1
+make: *** [Makefile:50: TP] Error 2

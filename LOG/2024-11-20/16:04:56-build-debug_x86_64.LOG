@@ -1,0 +1,16 @@
+==== Building spdlog (debug_x86_64) ====
+Creating bin/obj/x86_64_Debug
+async.cpp
+bundled_fmtlib_format.cpp
+cfg.cpp
+color_sinks.cpp
+file_sinks.cpp
+spdlog.cpp
+stdout_sinks.cpp
+Creating bin/x86_64_Debug
+Linking spdlog
+==== Building TP (debug_x86_64) ====
+Creating bin/obj/x86_64_Debug
+main.cpp
+Creating bin/x86_64_Debug
+Linking TP

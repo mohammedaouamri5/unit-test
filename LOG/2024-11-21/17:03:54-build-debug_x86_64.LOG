@@ -1,0 +1,60 @@
+==== Building spdlog (debug_x86_64) ====
+==== Building TP (debug_x86_64) ====
+EX1.cpp
+In file included from Source/EX1.cpp:4:
+Vendor/spdlog/include/spdlog/fmt/bundled/core.h: In instantiation of ‘constexpr decltype (ctx.begin()) fmt::v9::detail::parse_format_specs(ParseContext&) [with T = EX::__input_t*; ParseContext = compile_parse_context<char, error_handler>; decltype (ctx.begin()) = const char*]’:
+Vendor/spdlog/include/spdlog/fmt/bundled/core.h:2954:22:   required from ‘constexpr fmt::v9::detail::format_string_checker<Char, ErrorHandler, Args>::format_string_checker(fmt::v9::basic_string_view<Char>, ErrorHandler) [with Char = char; ErrorHandler = fmt::v9::detail::error_handler; Args = {EX::__input_t*}]’
+ 2954 |         parse_funcs_{&parse_format_specs<Args, parse_context_type>...},
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vendor/spdlog/include/spdlog/fmt/bundled/core.h:3159:47:   required from here
+ 3159 |       detail::parse_format_string<true>(str_, checker(s, {}));
+      |                                               ^~~~~~~~~~~~~~
+Vendor/spdlog/include/spdlog/fmt/bundled/core.h:2743:12: error: use of deleted function ‘fmt::v9::detail::fallback_formatter<T, Char, Enable>::fallback_formatter() [with T = EX::__input_t*; Char = char; Enable = void]’
+ 2743 |   auto f = conditional_t<has_formatter<mapped_type, context>::value,
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2744 |                          formatter<mapped_type, char_type>,
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2745 |                          fallback_formatter<stripped_type, char_type>>();
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vendor/spdlog/include/spdlog/fmt/bundled/core.h:1124:3: note: declared here
+ 1124 |   fallback_formatter() = delete;
+      |   ^~~~~~~~~~~~~~~~~~
+Vendor/spdlog/include/spdlog/fmt/bundled/core.h:2743:12: note: use ‘-fdiagnostics-all-candidates’ to display considered candidates
+ 2743 |   auto f = conditional_t<has_formatter<mapped_type, context>::value,
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2744 |                          formatter<mapped_type, char_type>,
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2745 |                          fallback_formatter<stripped_type, char_type>>();
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vendor/spdlog/include/spdlog/fmt/bundled/core.h: In instantiation of ‘constexpr fmt::v9::detail::value<Context> fmt::v9::detail::make_value(T&&) [with Context = fmt::v9::basic_format_context<fmt::v9::appender, char>; T = EX::__input_t*&]’:
+Vendor/spdlog/include/spdlog/fmt/bundled/core.h:1777:29:   required from ‘constexpr fmt::v9::format_arg_store<Context, Args>::format_arg_store(T&& ...) [with T = {EX::__input_t*&}; Context = fmt::v9::basic_format_context<fmt::v9::appender, char>; Args = {EX::__input_t*}]’
+ 1777 |   return make_value<Context>(val);
+      |          ~~~~~~~~~~~~~~~~~~~^~~~~
+Vendor/spdlog/include/spdlog/fmt/bundled/core.h:1918:31:   required from ‘constexpr fmt::v9::format_arg_store<Context, typename std::remove_cv<typename std::remove_reference<Args>::type>::type ...> fmt::v9::make_format_args(Args&& ...) [with Context = basic_format_context<appender, char>; Args = {EX::__input_t*&}]’
+ 1918 |   return {FMT_FORWARD(args)...};
+      |                               ^
+Vendor/spdlog/include/spdlog/logger.h:374:75:   required from ‘void spdlog::logger::log_(spdlog::source_loc, spdlog::level::level_enum, spdlog::string_view_t, Args&& ...) [with Args = {EX::__input_t*&}; spdlog::string_view_t = fmt::v9::basic_string_view<char>]’
+  374 |             fmt::vformat_to(fmt::appender(buf), fmt, fmt::make_format_args(args...));
+      |                                                      ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+Vendor/spdlog/include/spdlog/logger.h:90:13:   required from ‘void spdlog::logger::log(spdlog::source_loc, spdlog::level::level_enum, fmt::v9::format_string<T ...>, Args&& ...) [with Args = {EX::__input_t*&}; fmt::v9::format_string<T ...> = fmt::v9::basic_format_string<char, EX::__input_t*&>]’
+   90 |         log_(loc, lvl, details::to_string_view(fmt), std::forward<Args>(args)...);
+      |         ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vendor/spdlog/include/spdlog/logger.h:96:12:   required from ‘void spdlog::logger::log(spdlog::level::level_enum, fmt::v9::format_string<T ...>, Args&& ...) [with Args = {EX::__input_t*&}; fmt::v9::format_string<T ...> = fmt::v9::basic_format_string<char, EX::__input_t*&>]’
+   96 |         log(source_loc{}, lvl, fmt, std::forward<Args>(args)...);
+      |         ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vendor/spdlog/include/spdlog/logger.h:158:12:   required from ‘void spdlog::logger::info(fmt::v9::format_string<T ...>, Args&& ...) [with Args = {EX::__input_t*&}; fmt::v9::format_string<T ...> = fmt::v9::basic_format_string<char, EX::__input_t*&>]’
+  158 |         log(level::info, fmt, std::forward<Args>(args)...);
+      |         ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vendor/spdlog/include/spdlog/spdlog.h:170:31:   required from ‘void spdlog::info(fmt::v9::format_string<T ...>, Args&& ...) [with Args = {EX::__input_t*&}; fmt::v9::format_string<T ...> = fmt::v9::basic_format_string<char, EX::__input_t*&>]’
+  170 |     default_logger_raw()->info(fmt, std::forward<Args>(args)...);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Source/EX1.cpp:32:15:   required from here
+   32 |   spdlog::info("in {} " , in);
+      |   ~~~~~~~~~~~~^~~~~~~~~~~~~~~
+Vendor/spdlog/include/spdlog/fmt/bundled/core.h:1901:77:   in ‘constexpr’ expansion of ‘fmt::v9::detail::make_arg<true, fmt::v9::basic_format_context<fmt::v9::appender, char>, fmt::v9::detail::type::custom_type, EX::__input_t*&>((* & * & args#0))’
+Vendor/spdlog/include/spdlog/fmt/bundled/core.h:1751:17: error: static assertion failed: Formatting of non-void pointers is disallowed.
+ 1751 |   static_assert(formattable_pointer,
+      |                 ^~~~~~~~~~~~~~~~~~~
+Vendor/spdlog/include/spdlog/fmt/bundled/core.h:1751:17: note: ‘formattable_pointer’ evaluates to false
+make[1]: *** [TP.make:178: bin/obj/x86_64_Debug/EX1.o] Error 1
+make: *** [Makefile:50: TP] Error 2

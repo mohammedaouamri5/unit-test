@@ -1,0 +1,10 @@
+==== Building spdlog (debug_x86_64) ====
+==== Building TP (debug_x86_64) ====
+EX1.cpp
+main.cpp
+Linking TP
+/usr/bin/ld: bin/obj/x86_64_Debug/main.o: in function `main':
+main.cpp:(.text+0x289): undefined reference to `EX::parse_result[abi:cxx11](EX::__result_t*, EX::__return_t*, EX::__input_t*, EX::__output_t*)'
+collect2: error: ld returned 1 exit status
+make[1]: *** [TP.make:123: bin/x86_64_Debug/TP] Error 1
+make: *** [Makefile:50: TP] Error 2
