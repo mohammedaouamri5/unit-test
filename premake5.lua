@@ -3,7 +3,7 @@ configurations { "Debug", "Release", "Dist" }
 platforms { "x86_64", "x86" }
 include "EX"
 
-project "TP"
+project "UNIT-TEST"
 kind "ConsoleApp"
 language "C++"
 cppdialect "C++20"
