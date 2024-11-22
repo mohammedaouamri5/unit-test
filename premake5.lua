@@ -31,7 +31,7 @@ toolset "gcc"
 defines { "SPDLOG_COMPILED_LIB", "SPDLOG_ACTIVE_LEVEL" }
 
 group "Dependencies"
-    include "Vendor/spdlog"
+    include   "Vendor/spdlog"
 
 
 
