@@ -1,14 +1,7 @@
-
+#define JSON_NO_EXTERNAL_LIBRARY
 #include "EX.h"
 #include "loader.h"
-#include "spdlog/fmt/bundled/core.h"
-#include "spdlog/spdlog.h"
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
 #include <dlfcn.h>
-#include <semaphore.h>
-#include <sys/types.h>
 
 namespace EX {
 struct __input_t {
@@ -31,9 +24,7 @@ void ex(__result_t *result, __return_t *__return, __input_t *in,
         __output_t *out, const char __solution_path[]) {
   void (*sort_function)(int *, int);
   get_function(__solution_path, "sort", (void **)&sort_function);
-  spdlog::info("run");
   sort_function(in->arr, in->len);
-  spdlog::info("run done");
 }
 
 void parse_init(nlohmann::json *__json, __result_t **result, __return_t **__return,
@@ -63,7 +54,6 @@ void parse_init(nlohmann::json *__json, __result_t **result, __return_t **__retu
     }
 
   } catch (const nlohmann::json::exception &e) {
-    spdlog::warn("JSON Parsing Error: {}", e.what());
     exit(1);
   }
 }

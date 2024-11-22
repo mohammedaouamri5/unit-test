@@ -9,26 +9,32 @@ ifndef verbose
 endif
 
 ifeq ($(config),debug_x86_64)
+  EX1_config = debug_x86_64
   TP_config = debug_x86_64
   spdlog_config = debug_x86_64
 
 else ifeq ($(config),debug_x86)
+  EX1_config = debug_x86
   TP_config = debug_x86
   spdlog_config = debug_x86
 
 else ifeq ($(config),release_x86_64)
+  EX1_config = release_x86_64
   TP_config = release_x86_64
   spdlog_config = release_x86_64
 
 else ifeq ($(config),release_x86)
+  EX1_config = release_x86
   TP_config = release_x86
   spdlog_config = release_x86
 
 else ifeq ($(config),dist_x86_64)
+  EX1_config = dist_x86_64
   TP_config = dist_x86_64
   spdlog_config = dist_x86_64
 
 else ifeq ($(config),dist_x86)
+  EX1_config = dist_x86
   TP_config = dist_x86
   spdlog_config = dist_x86
 
@@ -36,13 +42,19 @@ else
   $(error "invalid configuration $(config)")
 endif
 
-PROJECTS := TP spdlog
+PROJECTS := EX1 TP spdlog
 
 .PHONY: all clean help $(PROJECTS) Dependencies
 
 all: $(PROJECTS)
 
 Dependencies: spdlog
+
+EX1:
+ifneq (,$(EX1_config))
+	@echo "==== Building EX1 ($(EX1_config)) ===="
+	@${MAKE} --no-print-directory -C EX/EX1 -f Makefile config=$(EX1_config)
+endif
 
 TP: spdlog
 ifneq (,$(TP_config))
@@ -57,6 +69,7 @@ ifneq (,$(spdlog_config))
 endif
 
 clean:
+	@${MAKE} --no-print-directory -C EX/EX1 -f Makefile clean
 	@${MAKE} --no-print-directory -C . -f TP.make clean
 	@${MAKE} --no-print-directory -C Vendor/spdlog -f Makefile clean
 
@@ -74,6 +87,7 @@ help:
 	@echo "TARGETS:"
 	@echo "   all (default)"
 	@echo "   clean"
+	@echo "   EX1"
 	@echo "   TP"
 	@echo "   spdlog"
 	@echo ""

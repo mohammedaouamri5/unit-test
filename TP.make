@@ -20,7 +20,7 @@ endif
 
 RESCOMP = windres
 DEFINES += -DSPDLOG_COMPILED_LIB -DSPDLOG_ACTIVE_LEVEL
-INCLUDES += -IVendor -IVendor/spdlog/include -IVendor/nlohmann
+INCLUDES += -IEX -IVendor -IVendor/spdlog/include -IVendor/nlohmann
 FORCE_INCLUDE +=
 ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
 ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
@@ -104,10 +104,8 @@ endif
 GENERATED :=
 OBJECTS :=
 
-GENERATED += $(OBJDIR)/EX1.o
 GENERATED += $(OBJDIR)/loader.o
 GENERATED += $(OBJDIR)/main.o
-OBJECTS += $(OBJDIR)/EX1.o
 OBJECTS += $(OBJDIR)/loader.o
 OBJECTS += $(OBJDIR)/main.o
 
@@ -173,9 +171,6 @@ endif
 # File Rules
 # #############################################
 
-$(OBJDIR)/EX1.o: Source/EX1.cpp
-	@echo "$(notdir $<)"
-	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/loader.o: Source/loader.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"

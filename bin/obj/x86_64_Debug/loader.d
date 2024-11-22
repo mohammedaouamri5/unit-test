@@ -261,9 +261,36 @@ bin/obj/x86_64_Debug/loader.o: Source/loader.cpp \
  Vendor/spdlog/include/spdlog/details/circular_q.h \
  /usr/include/c++/14.2.1/cassert /usr/include/assert.h \
  Vendor/spdlog/include/spdlog/version.h \
- Vendor/spdlog/include/spdlog/details/synchronous_factory.h \
- /usr/include/dlfcn.h /usr/include/bits/dlfcn.h \
- /usr/include/bits/dl_find_object.h
+ Vendor/spdlog/include/spdlog/details/synchronous_factory.h EX/EX.h \
+ Vendor/nlohmann/json.hpp /usr/include/c++/14.2.1/algorithm \
+ /usr/include/c++/14.2.1/bits/ranges_algo.h \
+ /usr/include/c++/14.2.1/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/14.2.1/forward_list \
+ /usr/include/c++/14.2.1/bits/forward_list.h \
+ /usr/include/c++/14.2.1/bits/forward_list.tcc \
+ /usr/include/c++/14.2.1/map /usr/include/c++/14.2.1/bits/stl_tree.h \
+ /usr/include/c++/14.2.1/bits/stl_map.h \
+ /usr/include/c++/14.2.1/bits/stl_multimap.h \
+ /usr/include/c++/14.2.1/valarray \
+ /usr/include/c++/14.2.1/bits/valarray_array.h \
+ /usr/include/c++/14.2.1/bits/valarray_array.tcc \
+ /usr/include/c++/14.2.1/bits/valarray_before.h \
+ /usr/include/c++/14.2.1/bits/slice_array.h \
+ /usr/include/c++/14.2.1/bits/valarray_after.h \
+ /usr/include/c++/14.2.1/bits/gslice.h \
+ /usr/include/c++/14.2.1/bits/gslice_array.h \
+ /usr/include/c++/14.2.1/bits/mask_array.h \
+ /usr/include/c++/14.2.1/bits/indirect_array.h \
+ /usr/include/c++/14.2.1/version /usr/include/c++/14.2.1/filesystem \
+ /usr/include/c++/14.2.1/bits/fs_fwd.h \
+ /usr/include/c++/14.2.1/bits/fs_path.h /usr/include/c++/14.2.1/codecvt \
+ /usr/include/c++/14.2.1/bits/fs_dir.h \
+ /usr/include/c++/14.2.1/bits/fs_ops.h /usr/include/c++/14.2.1/ranges \
+ /usr/include/c++/14.2.1/numeric \
+ /usr/include/c++/14.2.1/bits/stl_numeric.h \
+ /usr/include/c++/14.2.1/pstl/glue_numeric_defs.h \
+ /usr/include/c++/14.2.1/any /usr/include/dlfcn.h \
+ /usr/include/bits/dlfcn.h /usr/include/bits/dl_find_object.h
 /usr/include/stdc-predef.h:
 Vendor/spdlog/include/spdlog/spdlog.h:
 Vendor/spdlog/include/spdlog/common.h:
@@ -614,6 +641,40 @@ Vendor/spdlog/include/spdlog/details/circular_q.h:
 /usr/include/assert.h:
 Vendor/spdlog/include/spdlog/version.h:
 Vendor/spdlog/include/spdlog/details/synchronous_factory.h:
+EX/EX.h:
+Vendor/nlohmann/json.hpp:
+/usr/include/c++/14.2.1/algorithm:
+/usr/include/c++/14.2.1/bits/ranges_algo.h:
+/usr/include/c++/14.2.1/pstl/glue_algorithm_defs.h:
+/usr/include/c++/14.2.1/forward_list:
+/usr/include/c++/14.2.1/bits/forward_list.h:
+/usr/include/c++/14.2.1/bits/forward_list.tcc:
+/usr/include/c++/14.2.1/map:
+/usr/include/c++/14.2.1/bits/stl_tree.h:
+/usr/include/c++/14.2.1/bits/stl_map.h:
+/usr/include/c++/14.2.1/bits/stl_multimap.h:
+/usr/include/c++/14.2.1/valarray:
+/usr/include/c++/14.2.1/bits/valarray_array.h:
+/usr/include/c++/14.2.1/bits/valarray_array.tcc:
+/usr/include/c++/14.2.1/bits/valarray_before.h:
+/usr/include/c++/14.2.1/bits/slice_array.h:
+/usr/include/c++/14.2.1/bits/valarray_after.h:
+/usr/include/c++/14.2.1/bits/gslice.h:
+/usr/include/c++/14.2.1/bits/gslice_array.h:
+/usr/include/c++/14.2.1/bits/mask_array.h:
+/usr/include/c++/14.2.1/bits/indirect_array.h:
+/usr/include/c++/14.2.1/version:
+/usr/include/c++/14.2.1/filesystem:
+/usr/include/c++/14.2.1/bits/fs_fwd.h:
+/usr/include/c++/14.2.1/bits/fs_path.h:
+/usr/include/c++/14.2.1/codecvt:
+/usr/include/c++/14.2.1/bits/fs_dir.h:
+/usr/include/c++/14.2.1/bits/fs_ops.h:
+/usr/include/c++/14.2.1/ranges:
+/usr/include/c++/14.2.1/numeric:
+/usr/include/c++/14.2.1/bits/stl_numeric.h:
+/usr/include/c++/14.2.1/pstl/glue_numeric_defs.h:
+/usr/include/c++/14.2.1/any:
 /usr/include/dlfcn.h:
 /usr/include/bits/dlfcn.h:
 /usr/include/bits/dl_find_object.h:

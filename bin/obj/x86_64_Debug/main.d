@@ -1,5 +1,6 @@
 bin/obj/x86_64_Debug/main.o: Source/main.cpp /usr/include/stdc-predef.h \
- Source/EX.h Vendor/nlohmann/json.hpp /usr/include/c++/14.2.1/algorithm \
+ Source/loader.h EX/EX.h Vendor/nlohmann/json.hpp \
+ /usr/include/c++/14.2.1/algorithm \
  /usr/include/c++/14.2.1/bits/stl_algobase.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -293,7 +294,8 @@ bin/obj/x86_64_Debug/main.o: Source/main.cpp /usr/include/stdc-predef.h \
  Vendor/spdlog/include/spdlog/version.h \
  Vendor/spdlog/include/spdlog/details/synchronous_factory.h
 /usr/include/stdc-predef.h:
-Source/EX.h:
+Source/loader.h:
+EX/EX.h:
 Vendor/nlohmann/json.hpp:
 /usr/include/c++/14.2.1/algorithm:
 /usr/include/c++/14.2.1/bits/stl_algobase.h:

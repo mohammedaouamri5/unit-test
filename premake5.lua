@@ -13,9 +13,11 @@ objdir("bin/obj/%{cfg.platform}_%{cfg.buildcfg}")
 
 files { "Source/**" }
 includedirs {
+    "EX" , 
     "Vendor/",
     "Vendor/spdlog/include",
     "Vendor/nlohmann", 
+
 }
 
 

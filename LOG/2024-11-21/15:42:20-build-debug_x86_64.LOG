@@ -1,9 +1,0 @@
-==== Building spdlog (debug_x86_64) ====
-==== Building TP (debug_x86_64) ====
-loader.cpp
-Source/loader.cpp: In function ‘void get_function(const char*, const char*, void**)’:
-Source/loader.cpp:35:16: error: ‘sort_function’ cannot be used as a function
-   35 |   sort_function(arr, len);
-      |   ~~~~~~~~~~~~~^~~~~~~~~~
-make[1]: *** [TP.make:181: bin/obj/x86_64_Debug/loader.o] Error 1
-make: *** [Makefile:50: TP] Error 2

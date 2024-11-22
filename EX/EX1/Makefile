@@ -19,10 +19,12 @@ endif
 # #############################################
 
 RESCOMP = windres
-INCLUDES += -I../../Vendor -I../../Vendor/spdlog/include -I../../Vendor/nlohmann -I../../Source -I.. -I. -Isolutions -Ibin -Ibin/x86_64_Debug -Ibin/obj -Ibin/obj/x86_64_Debug
+INCLUDES += -I../../Vendor -I../../Vendor/nlohmann -I../../Source -I.. -I/usr/include/fmt -I. -Isolutions
 FORCE_INCLUDE +=
 ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
 ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+LIBS += -ldl -lfmt
+LDDEPS +=
 LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
 define PREBUILDCMDS
 endef
@@ -35,66 +37,54 @@ ifeq ($(config),debug_x86_64)
 TARGETDIR = bin/x86_64_Debug
 TARGET = $(TARGETDIR)/libEX1.so
 OBJDIR = bin/obj/x86_64_Debug
-DEFINES += -DSPDLOG_COMPILED_LIB -DSPDLOG_ACTIVE_LEVEL -DDEBUG
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g -fPIC
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g -std=c++20 -fPIC
-LIBS += ../../Vendor/spdlog/bin/x86_64_Debug/libspdlog.a -ldl -lfmt -lpthread
-LDDEPS += ../../Vendor/spdlog/bin/x86_64_Debug/libspdlog.a
+DEFINES += -DDEBUG
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g -std=c++20
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -shared -Wl,-soname=libEX1.so
 
 else ifeq ($(config),debug_x86)
 TARGETDIR = bin/x86_Debug
 TARGET = $(TARGETDIR)/libEX1.so
 OBJDIR = bin/obj/x86_Debug
-DEFINES += -DSPDLOG_COMPILED_LIB -DSPDLOG_ACTIVE_LEVEL -DDEBUG
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -fPIC -g -fPIC
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m32 -fPIC -g -std=c++20 -fPIC
-LIBS += ../../Vendor/spdlog/bin/x86_Debug/libspdlog.a -ldl -lfmt -lpthread
-LDDEPS += ../../Vendor/spdlog/bin/x86_Debug/libspdlog.a
+DEFINES += -DDEBUG
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -fPIC -g
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m32 -fPIC -g -std=c++20
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib32 -m32 -shared -Wl,-soname=libEX1.so
 
 else ifeq ($(config),release_x86_64)
 TARGETDIR = bin/x86_64_Release
 TARGET = $(TARGETDIR)/libEX1.so
 OBJDIR = bin/obj/x86_64_Release
-DEFINES += -DSPDLOG_COMPILED_LIB -DSPDLOG_ACTIVE_LEVEL -DRELEASE
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -g -fPIC
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -g -std=c++20 -fPIC
-LIBS += ../../Vendor/spdlog/bin/x86_64_Release/libspdlog.a -ldl -lfmt -lpthread
-LDDEPS += ../../Vendor/spdlog/bin/x86_64_Release/libspdlog.a
+DEFINES += -DRELEASE
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -g
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -g -std=c++20
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -shared -Wl,-soname=libEX1.so
 
 else ifeq ($(config),release_x86)
 TARGETDIR = bin/x86_Release
 TARGET = $(TARGETDIR)/libEX1.so
 OBJDIR = bin/obj/x86_Release
-DEFINES += -DSPDLOG_COMPILED_LIB -DSPDLOG_ACTIVE_LEVEL -DRELEASE
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -O2 -fPIC -g -fPIC
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m32 -O2 -fPIC -g -std=c++20 -fPIC
-LIBS += ../../Vendor/spdlog/bin/x86_Release/libspdlog.a -ldl -lfmt -lpthread
-LDDEPS += ../../Vendor/spdlog/bin/x86_Release/libspdlog.a
+DEFINES += -DRELEASE
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -O2 -fPIC -g
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m32 -O2 -fPIC -g -std=c++20
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib32 -m32 -shared -Wl,-soname=libEX1.so
 
 else ifeq ($(config),dist_x86_64)
 TARGETDIR = bin/x86_64_Dist
 TARGET = $(TARGETDIR)/libEX1.so
 OBJDIR = bin/obj/x86_64_Dist
-DEFINES += -DSPDLOG_COMPILED_LIB -DSPDLOG_ACTIVE_LEVEL -DDIST
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -fPIC
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++20 -fPIC
-LIBS += ../../Vendor/spdlog/bin/x86_64_Dist/libspdlog.a -ldl -lfmt -lpthread
-LDDEPS += ../../Vendor/spdlog/bin/x86_64_Dist/libspdlog.a
+DEFINES += -DDIST
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++20
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -shared -Wl,-soname=libEX1.so -s
 
 else ifeq ($(config),dist_x86)
 TARGETDIR = bin/x86_Dist
 TARGET = $(TARGETDIR)/libEX1.so
 OBJDIR = bin/obj/x86_Dist
-DEFINES += -DSPDLOG_COMPILED_LIB -DSPDLOG_ACTIVE_LEVEL -DDIST
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -O2 -fPIC -fPIC
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m32 -O2 -fPIC -std=c++20 -fPIC
-LIBS += ../../Vendor/spdlog/bin/x86_Dist/libspdlog.a -ldl -lfmt -lpthread
-LDDEPS += -fPIC f  vsqfqs v ../../Vendor/spdlog/bin/x86_Dist/libspdlog.a
+DEFINES += -DDIST
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -O2 -fPIC
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m32 -O2 -fPIC -std=c++20
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib32 -m32 -shared -Wl,-soname=libEX1.so -s
 
 endif
@@ -110,7 +100,9 @@ GENERATED :=
 OBJECTS :=
 
 GENERATED += $(OBJDIR)/EX1.o
+GENERATED += $(OBJDIR)/loader.o
 OBJECTS += $(OBJDIR)/EX1.o
+OBJECTS += $(OBJDIR)/loader.o
 
 # Rules
 # #############################################
@@ -174,6 +166,9 @@ endif
 # File Rules
 # #############################################
 
+$(OBJDIR)/loader.o: ../../Source/loader.cpp
+	@echo "$(notdir $<)"
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/EX1.o: EX1.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"

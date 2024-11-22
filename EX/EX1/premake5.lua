@@ -2,9 +2,6 @@ workspace "UNIT-TEST"
     configurations { "Debug", "Release", "Dist" }
     platforms { "x86_64", "x86" }
 
-    -- Include the Vendor folder as a subdirectory for dependencies
-    group "Dependencies"
-    include "./../../Vendor/spdlog"
 
 project "EX1"
     kind "SharedLib"
@@ -15,32 +12,28 @@ project "EX1"
     targetdir("bin/%{cfg.platform}_%{cfg.buildcfg}")
     objdir("bin/obj/%{cfg.platform}_%{cfg.buildcfg}")
 
-    files { "EX1.cpp" }
+    files { "EX1.cpp" , "./../../Source/loader.cpp" }
 
     -- Include directories
     includedirs {
         "./../../Vendor/",
-        "./../../Vendor/spdlog/include",
         "./../../Vendor/nlohmann",
         "./../../Source",
         "./../../EX",
+        "/usr/include/fmt", 
         "./../**"
     }
 
     -- Link against dependencies
     links {
-        "spdlog",
-        "dl",         -- For dynamic loading on Linux
-        "fmt"         -- Assuming fmt is also in your vendor folder
+        "dl",         -- For dynamic loding on Linux
+    "fmt", 
     }
 
-    -- Defines for conditional compilation
-    defines { "SPDLOG_COMPILED_LIB", "SPDLOG_ACTIVE_LEVEL" }
+    -- Defines for conditionl compilation
 
     -- Build flags and options specific to the platform
     filter "system:linux"
-        buildoptions { "-fPIC" }  -- Ensure position-independent code for shared libraries
-        links { "pthread" }        -- Add pthread for Linux if necessary for thread-safe logging
 
     filter "system:windows"
         systemversion "latest"

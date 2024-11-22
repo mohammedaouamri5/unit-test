@@ -1,9 +1,0 @@
-==== Building spdlog (debug_x86_64) ====
-==== Building TP (debug_x86_64) ====
-EX1.cpp
-Source/EX1.cpp: In function ‘void EX::ex(__input_t*, __output_t*, const char*)’:
-Source/EX1.cpp:29:16: error: too few arguments to function
-   29 |   sort_function();
-      |   ~~~~~~~~~~~~~^~
-make[1]: *** [TP.make:178: bin/obj/x86_64_Debug/EX1.o] Error 1
-make: *** [Makefile:50: TP] Error 2

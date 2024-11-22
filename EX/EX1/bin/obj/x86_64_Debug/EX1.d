@@ -259,41 +259,8 @@ bin/obj/x86_64_Debug/EX1.o: EX1.cpp /usr/include/stdc-predef.h ../EX.h \
  /usr/include/c++/14.2.1/numeric \
  /usr/include/c++/14.2.1/bits/stl_numeric.h \
  /usr/include/c++/14.2.1/pstl/glue_numeric_defs.h \
- /usr/include/c++/14.2.1/any ../../Source/loader.h \
- ../../Vendor/spdlog/include/spdlog/fmt/bundled/core.h \
- ../../Vendor/spdlog/include/spdlog/spdlog.h \
- ../../Vendor/spdlog/include/spdlog/common.h \
- ../../Vendor/spdlog/include/spdlog/tweakme.h \
- ../../Vendor/spdlog/include/spdlog/details/null_mutex.h \
- /usr/include/c++/14.2.1/atomic /usr/include/c++/14.2.1/chrono \
- /usr/include/c++/14.2.1/bits/chrono_io.h /usr/include/c++/14.2.1/format \
- /usr/include/c++/14.2.1/charconv /usr/include/c++/14.2.1/variant \
- /usr/include/c++/14.2.1/bits/unicode.h \
- /usr/include/c++/14.2.1/bits/unicode-data.h \
- ../../Vendor/spdlog/include/spdlog/fmt/fmt.h \
- ../../Vendor/spdlog/include/spdlog/fmt/bundled/format.h \
- ../../Vendor/spdlog/include/spdlog/fmt/bundled/core.h \
- ../../Vendor/spdlog/include/spdlog/details/registry.h \
- ../../Vendor/spdlog/include/spdlog/details/periodic_worker.h \
- /usr/include/c++/14.2.1/condition_variable \
- /usr/include/c++/14.2.1/bits/unique_lock.h \
- /usr/include/c++/14.2.1/stop_token \
- /usr/include/c++/14.2.1/bits/std_thread.h \
- /usr/include/c++/14.2.1/semaphore \
- /usr/include/c++/14.2.1/bits/semaphore_base.h \
- /usr/include/c++/14.2.1/bits/atomic_timed_wait.h \
- /usr/include/c++/14.2.1/bits/this_thread_sleep.h /usr/include/sys/time.h \
- /usr/include/semaphore.h /usr/include/bits/semaphore.h \
- /usr/include/c++/14.2.1/mutex /usr/include/c++/14.2.1/thread \
- ../../Vendor/spdlog/include/spdlog/logger.h \
- ../../Vendor/spdlog/include/spdlog/details/log_msg.h \
- ../../Vendor/spdlog/include/spdlog/details/backtracer.h \
- ../../Vendor/spdlog/include/spdlog/details/log_msg_buffer.h \
- ../../Vendor/spdlog/include/spdlog/details/circular_q.h \
- ../../Vendor/spdlog/include/spdlog/version.h \
- ../../Vendor/spdlog/include/spdlog/details/synchronous_factory.h \
- /usr/include/dlfcn.h /usr/include/bits/dlfcn.h \
- /usr/include/bits/dl_find_object.h
+ /usr/include/c++/14.2.1/any ../../Source/loader.h /usr/include/dlfcn.h \
+ /usr/include/bits/dlfcn.h /usr/include/bits/dl_find_object.h
 /usr/include/stdc-predef.h:
 ../EX.h:
 ../../Vendor/nlohmann/json.hpp:
@@ -641,44 +608,6 @@ bin/obj/x86_64_Debug/EX1.o: EX1.cpp /usr/include/stdc-predef.h ../EX.h \
 /usr/include/c++/14.2.1/pstl/glue_numeric_defs.h:
 /usr/include/c++/14.2.1/any:
 ../../Source/loader.h:
-../../Vendor/spdlog/include/spdlog/fmt/bundled/core.h:
-../../Vendor/spdlog/include/spdlog/spdlog.h:
-../../Vendor/spdlog/include/spdlog/common.h:
-../../Vendor/spdlog/include/spdlog/tweakme.h:
-../../Vendor/spdlog/include/spdlog/details/null_mutex.h:
-/usr/include/c++/14.2.1/atomic:
-/usr/include/c++/14.2.1/chrono:
-/usr/include/c++/14.2.1/bits/chrono_io.h:
-/usr/include/c++/14.2.1/format:
-/usr/include/c++/14.2.1/charconv:
-/usr/include/c++/14.2.1/variant:
-/usr/include/c++/14.2.1/bits/unicode.h:
-/usr/include/c++/14.2.1/bits/unicode-data.h:
-../../Vendor/spdlog/include/spdlog/fmt/fmt.h:
-../../Vendor/spdlog/include/spdlog/fmt/bundled/format.h:
-../../Vendor/spdlog/include/spdlog/fmt/bundled/core.h:
-../../Vendor/spdlog/include/spdlog/details/registry.h:
-../../Vendor/spdlog/include/spdlog/details/periodic_worker.h:
-/usr/include/c++/14.2.1/condition_variable:
-/usr/include/c++/14.2.1/bits/unique_lock.h:
-/usr/include/c++/14.2.1/stop_token:
-/usr/include/c++/14.2.1/bits/std_thread.h:
-/usr/include/c++/14.2.1/semaphore:
-/usr/include/c++/14.2.1/bits/semaphore_base.h:
-/usr/include/c++/14.2.1/bits/atomic_timed_wait.h:
-/usr/include/c++/14.2.1/bits/this_thread_sleep.h:
-/usr/include/sys/time.h:
-/usr/include/semaphore.h:
-/usr/include/bits/semaphore.h:
-/usr/include/c++/14.2.1/mutex:
-/usr/include/c++/14.2.1/thread:
-../../Vendor/spdlog/include/spdlog/logger.h:
-../../Vendor/spdlog/include/spdlog/details/log_msg.h:
-../../Vendor/spdlog/include/spdlog/details/backtracer.h:
-../../Vendor/spdlog/include/spdlog/details/log_msg_buffer.h:
-../../Vendor/spdlog/include/spdlog/details/circular_q.h:
-../../Vendor/spdlog/include/spdlog/version.h:
-../../Vendor/spdlog/include/spdlog/details/synchronous_factory.h:
 /usr/include/dlfcn.h:
 /usr/include/bits/dlfcn.h:
 /usr/include/bits/dl_find_object.h:
